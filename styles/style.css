@@ -74,7 +74,7 @@
   grid-template-rows: repeat(3, 1fr);
   color: #fff;
   font-size: 100px;
-  line-height: 1;
+  line-height: 0.8;
   text-transform: uppercase;
   letter-spacing: 0.3em;
 }
@@ -112,6 +112,7 @@
   line-height: 28px;
   text-transform: uppercase;
   max-width: 540px;
+  word-spacing: 1.4em;
 }
 
 .bet-button {
@@ -161,7 +162,7 @@
 
 .card__title {
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 1.1;
   text-decoration: underline;
   text-transform: uppercase;
   margin-bottom: auto;
@@ -219,7 +220,7 @@
   font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 30px;
-  margin-top: 40px;
+  margin-top: 36px;
 }
 
 .about__text {
@@ -231,6 +232,11 @@
 .about__text p {
   font-size: 20px;
   line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
 }
 
 .footer {
@@ -259,7 +265,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .footer__menu-link {
