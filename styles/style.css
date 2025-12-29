@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-columns: 1fr min-content 1fr; /* Меню | Лого | Адрес */
+  grid-template-columns: 1fr min-content 1fr;
   align-items: center;
   padding: 92px 50px;
 }
@@ -12,12 +12,12 @@
 .menu ul {
   display: flex;
   gap: 32px;
-  list-style-type: circle; /* По заданию */
-  padding-left: 20px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .menu li:first-child {
-  list-style-type: none; /* У первой ссылки нет кружочка */
+  list-style-type: none;
 }
 
 .menu a {
@@ -36,7 +36,7 @@
   font-size: 18px;
   line-height: 21px;
   text-align: left;
-  max-width: 240px;
+  width: 240px;
 }
 
 .contacts a {
@@ -47,7 +47,6 @@
   margin-top: 5px;
 }
 
-/* --- COVER (Шаг 5) --- */
 .cover {
   position: relative;
   min-height: 757px;
@@ -60,7 +59,6 @@
   background-position: center;
 }
 
-/* Переиспользуемый оверлей */
 .overlay {
   position: absolute;
   inset: 0;
@@ -78,6 +76,7 @@
   font-size: 100px;
   line-height: 100%;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .aligned-text {
@@ -100,7 +99,7 @@
   position: relative;
   z-index: 1;
   display: flex;
-  justify-content: flex-end; /* Сдвигаем всё вправо */
+  justify-content: flex-end;
   align-items: center;
   gap: 78px;
   width: 100%;
@@ -112,7 +111,7 @@
   line-height: 28px;
   text-transform: uppercase;
   max-width: 540px;
-  word-spacing: 15px; /* Настройка расстояния между словами по макету */
+  /* word-spacing: 15px; */
 }
 
 .description button {
@@ -125,7 +124,6 @@
   white-space: nowrap;
 }
 
-/* --- LOTS (Шаг 6) --- */
 .lots {
   padding: 180px 50px;
 }
@@ -174,19 +172,28 @@
 
 .card__title {
   font-size: 22px;
-  line-height: 120%;
+  line-height: 100%;
   text-decoration: underline;
   text-transform: uppercase;
+  margin-bottom: auto;
 }
 
 .card__text {
   font-size: 20px;
-  line-height: 120%;
+  line-height: 24px;
 }
 
-.card_type_film { background-image: url("../images/card-lot-01.jpg"); }
-.card_type_book { background-image: url("../images/card-lot-02.jpg"); }
-.card_type_picture { background-image: url("../images/card-lot-03.jpg"); }
+.card_type_film {
+  background-image: url("../images/card-lot-01.jpg");
+}
+
+.card_type_book {
+  background-image: url("../images/card-lot-02.jpg");
+}
+
+.card_type_picture {
+  background-image: url("../images/card-lot-03.jpg");
+}
 
 .lots__look-more {
   display: block;
@@ -196,13 +203,12 @@
   text-decoration: underline;
 }
 
-/* --- ABOUT (Шаг 7) --- */
-
 .about {
   display: grid;
-  grid-template-columns: 240px 1fr; /* Лого | Текст */
+  grid-template-columns: 240px 1fr;
   column-gap: 51px;
   padding: 180px 50px;
+  align-items: start;
 }
 
 .about__logo {
@@ -222,10 +228,11 @@
 
 .about__title {
   grid-column: 2;
-  align-self: center;
+  /* align-self: center; */
   font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 30px;
+  margin-top: 40px;
 }
 
 .about__text {
@@ -240,10 +247,9 @@
   line-height: 120%;
 }
 
-/* --- FOOTER (Шаг 8) --- */
 .footer {
   display: grid;
-  grid-template-columns: 1fr min-content 1fr; /* Адрес | Меню | Соцсети */
+  grid-template-columns: 1fr min-content 1fr;
   align-items: start;
   padding: 180px 50px 90px;
 }
@@ -284,6 +290,7 @@
   justify-content: flex-end;
   gap: 16px;
   list-style: none;
+  margin-top: -5px;
 }
 
 .footer__social-icon {
