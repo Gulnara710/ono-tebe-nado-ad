@@ -1,17 +1,23 @@
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr; /* Меню | Лого | Адрес */
   align-items: center;
   padding: 92px 50px;
 }
 
 .menu {
-  flex: 1;
+  justify-self: start;
 }
 
 .menu ul {
   display: flex;
   gap: 32px;
-  list-style-type: none;
+  list-style-type: circle; /* По заданию */
+  padding-left: 20px;
+}
+
+.menu li:first-child {
+  list-style-type: none; /* У первой ссылки нет кружочка */
 }
 
 .menu a {
@@ -20,61 +26,62 @@
 }
 
 .logo {
-  flex-shrink: 0;
   width: 148px;
+  display: block;
 }
 
 .contacts {
-  flex: 1;
+  justify-self: end;
   font-style: normal;
   font-size: 18px;
   line-height: 21px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  text-align: left;
+  max-width: 240px;
 }
 
 .contacts a {
-  text-align: left;
   text-decoration: underline;
-  width: 240px;
 }
 
-.contacts a.address {
-  text-decoration: none;
+.contacts p {
+  margin-top: 5px;
 }
 
+/* --- COVER (Шаг 5) --- */
 .cover {
+  position: relative;
   min-height: 757px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: 135px 50px 50px;
   background-image: url("../images/cover.jpg");
   background-size: cover;
   background-position: center;
 }
 
+/* Переиспользуемый оверлей */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
 .title {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 100%;
   color: #fff;
   font-size: 100px;
   line-height: 100%;
   text-transform: uppercase;
-  margin-bottom: 20px;
 }
 
 .aligned-text {
   display: block;
-}
-
-.aligned-text:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
 }
 
 .aligned-text_center {
@@ -90,8 +97,10 @@
 }
 
 .description {
+  position: relative;
+  z-index: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* Сдвигаем всё вправо */
   align-items: center;
   gap: 78px;
   width: 100%;
@@ -103,6 +112,7 @@
   line-height: 28px;
   text-transform: uppercase;
   max-width: 540px;
+  word-spacing: 15px; /* Настройка расстояния между словами по макету */
 }
 
 .description button {
@@ -112,18 +122,18 @@
   padding: 12px 32px;
   font-size: 22px;
   text-transform: uppercase;
-  cursor: pointer;
+  white-space: nowrap;
 }
 
+/* --- LOTS (Шаг 6) --- */
 .lots {
-  padding: 179px 50px;
+  padding: 180px 50px;
 }
 
 .lots__heading {
   font-size: 64px;
   text-transform: uppercase;
   margin-bottom: 27px;
-  
 }
 
 .lots__list {
@@ -135,17 +145,18 @@
 }
 
 .lots__list-item {
-  display: flex;
+  height: 100%;
 }
 
 .card-link {
   display: block;
-  width: 100%;
+  height: 100%;
   text-decoration: none;
   color: #fff;
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -156,31 +167,26 @@
   background-position: center;
 }
 
-.card_type_film {
-  background-image: url("../images/card-lot-01.jpg");
-}
-
-.card_type_book {
-  background-image: url("../images/card-lot-02.jpg");
-}
-
-.card_type_picture {
-  background-image: url("../images/card-lot-03.jpg");
+.card__title, .card__text {
+  position: relative;
+  z-index: 1;
 }
 
 .card__title {
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 120%;
   text-decoration: underline;
   text-transform: uppercase;
-  margin-bottom: auto;
 }
 
 .card__text {
   font-size: 20px;
-  line-height: 1.2;
-  margin-top: 30px;
+  line-height: 120%;
 }
+
+.card_type_film { background-image: url("../images/card-lot-01.jpg"); }
+.card_type_book { background-image: url("../images/card-lot-02.jpg"); }
+.card_type_picture { background-image: url("../images/card-lot-03.jpg"); }
 
 .lots__look-more {
   display: block;
@@ -188,22 +194,18 @@
   margin-left: 40px;
   font-size: 20px;
   text-decoration: underline;
-  text-transform: lowercase;
 }
+
+/* --- ABOUT (Шаг 7) --- */
 
 .about {
   display: grid;
-  grid-template-columns: repeat(18, 1fr);
-  grid-template-rows: 240px auto;
-  column-gap: 0;
-  padding: 80px 50px;
-  width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: 240px 1fr; /* Лого | Текст */
+  column-gap: 51px;
+  padding: 180px 50px;
 }
 
 .about__logo {
-  grid-column: 2 / 6;
-  grid-row: 1;
   width: 240px;
   height: 240px;
   background-color: #000;
@@ -211,48 +213,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-column: 1;
 }
 
 .about__logo-image {
   width: 148px;
-  height: auto;
 }
 
 .about__title {
-  grid-column: 7 / 19;
-  grid-row: 1;
+  grid-column: 2;
   align-self: center;
-  font-weight: 700;
   font-size: 40px;
-  line-height: 47px;
   text-transform: uppercase;
-  margin: 0;
+  margin-bottom: 30px;
 }
 
 .about__text {
-  grid-column: 7 / 19;
-  grid-row: 2;
-  
+  grid-column: 2;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding-top: 30px;
 }
 
 .about__text p {
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 120%;
 }
 
+/* --- FOOTER (Шаг 8) --- */
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr; /* Адрес | Меню | Соцсети */
+  align-items: start;
   padding: 180px 50px 90px;
 }
 
 .footer__contacts {
-  flex: 1;
   font-style: normal;
   font-size: 18px;
   line-height: 21px;
@@ -261,15 +257,9 @@
 .footer__contacts a {
   display: block;
   text-decoration: underline;
-  margin-bottom: 2px;
-}
-
-.footer__address {
-  margin-top: 5px;
 }
 
 .footer__menu {
-  flex: 1;
   text-align: center;
 }
 
@@ -290,7 +280,6 @@
 }
 
 .footer__social-list {
-  flex: 1;
   display: flex;
   justify-content: flex-end;
   gap: 16px;
