@@ -98,7 +98,6 @@
   line-height: 28px;
   text-transform: uppercase;
   max-width: 540px;
-  white-space: nowrap;
 }
 
 .bet-button {
@@ -124,7 +123,7 @@
 
 .lots__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 334px);
   gap: 25px;
   list-style: none;
   margin-bottom: 30px;
@@ -172,7 +171,7 @@
 }
 
 .card_type_film {
-  background-image: url("../images/card-lot-01.jpg");
+    background-image: url("../images/card-lot-01.jpg");
 }
 
 .card_type_book {
@@ -193,8 +192,8 @@
 .about {
   display: grid;
   grid-template-columns: 240px 1fr;
-  padding: 180px 50px 0;
-  column-gap: 51px;
+  padding: 100px 50px 0 409px;
+  column-gap: 25px;
   align-items: start;
 }
 
@@ -240,7 +239,7 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: start;
-  padding: 100px 50px 90px;
+  padding: 80px 50px 90px;
 }
 
 .footer__address {
