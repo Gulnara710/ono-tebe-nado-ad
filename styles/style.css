@@ -25,7 +25,6 @@
 .logo {
   justify-self: center;
   width: 148px;
-  display: block;
 }
 
 .address {
@@ -47,9 +46,6 @@
 .cover {
   position: relative;
   min-height: 757px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 165px 50px 50px;
   background-image: url("../images/cover.jpg");
   background-size: cover;
@@ -98,7 +94,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 135px;
-  width: 100%;
 }
 
 .cover__description-text {
@@ -194,7 +189,6 @@
 
 .lots__look-more {
   display: block;
-  width: fit-content;
   margin-left: 40px;
   font-size: 20px;
 }
@@ -246,6 +240,7 @@
   line-height: 1.2;
 }
 
+/* FOOTER */
 .footer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
