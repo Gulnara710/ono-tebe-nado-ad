@@ -1,1 +1,1 @@
-https://github.com/Gulnara710/ono-tebe-nado-adgit add README.md
+https://github.com/Gulnara710/ono-tebe-nado-ad.git
